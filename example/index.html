@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="../singlish-keyboard.css">
+  <script src="../singlish-keyboard.js"></script>
+
+  <script type="text/javascript">
+  	$(function () {
+  		singlish_enable = false;
+        $('#sinhala_enable').click(function(){
+            if($(this).prop("checked") == true){
+                singlish_enable = true;
+            }
+            else{
+                singlish_enable = false;
+            }
+        });
+
+        $('.singlish').keypress(function(e){
+            uni_word = convertText('');
+        }).textcomplete([{
+          match: /(^|\S*)([^\u0000-\u007f]{2,}|\w{2,})$/,
+            search: function (term, callback) {
+              callback($.map(SinhalaDict, function (word) {
+                  return word.indexOf(uni_word) === 0 ? word : null; //=== 0
+              }));
+            },
+            replace: function (word) {
+               return word + ' ';
+         }
+        }],{
+          zIndex: 10000,
+          listPosition: function (position) {
+            this.$el.css(this._applyPlacement(position));
+            this.$el.css('position', 'absolute');
+            return this
+          }
+        });
+  	});
+  </script>
+
+</head>
+<body>
+  
+<div class="container">
+  
+  <div class="col-md-12">
+    <div class="pull-right">
+    	<h6><label style="cursor: pointer;">Enable Sinhala Keyboard <input id="sinhala_enable" type="checkbox"></label>&nbsp;<a href="http://www.eteacher.me/help/sinhala-keyboard" target="_blank"><span class="glyphicon glyphicon-info-sign"></span></a></h6> 
+    </div>
+
+    <div>
+    	<textarea class="singlish" style="width: 100%;" rows="10"></textarea>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
