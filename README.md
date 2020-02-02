@@ -10,3 +10,5 @@ Realtime Singlish to Sinhala unicode converter that support all browser
 **මෙම මෘදුකාංගය ඔබගේත් නිර්මාණයකට බාවිතා කිරීමට හැකිවන පරිදි අප මෙය Open Source කළෙමු. රටේ සියලු ජනායා පහසුවෙන් මෙය බාවිතා කරමින් දැණුම බෙදා හදාගන්නට උත්සුක වීම දැකීම අපගේ අරමුණයි. මෙහි ඉදිරි සංවර්ධන කටයුතු වෙනුවන් ඔබටත් කල හැකි සෑම දෙයක්ම අප අගය කොට සලකමු.**
 
 විශේෂ ස්තුතිය [University of Ruhuna](http://www.ruh.ac.lk/) ට සහ [University of Colombo](http://www.cmb.ac.lk/) වෙත පිළිගන්නෙමු.
+
+Licenses: Creative Commons
